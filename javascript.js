@@ -6,9 +6,8 @@ function getComputerChoice() {
 
 // console.log(getComputerChoice());
 
-function playRound() {
-    let playerSelection = prompt("Please enter your selection: ").toLowerCase();
-    let computerSelection = getComputerChoice().toLowerCase();
+function playRound(playerSelection, computerSelection1) {
+    let computerSelection = computerSelection1.toLowerCase();
     console.log(playerSelection);
     console.log(computerSelection);
 
@@ -22,6 +21,22 @@ function playRound() {
         result = `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 
-    console.log(result);
+    // console.log(result);
     return result;
 }
+
+// const playerSelection = "rock";
+// const computerSelection = getComputerChoice();
+// console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+    for (let i = 0; i < 2; i++) {
+        let playerSelection = prompt("Please enter your selection: ").toLowerCase();
+        const computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result);
+    }
+
+}
+
+console.log(game());
