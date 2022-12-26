@@ -8,8 +8,15 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <p>This is the computer's choice</p>
-    <button onclick="game()">Play Game</button>
+    <h1>Pierre, papier, ciseaux</h1>
+    <p>Nous sommes cultivés, donc on le fait en français!</p>
+    <!-- <button onclick="game()">Play Game</button> -->
+
+    <p id="rock-paper-scissors-output"></p>
+    
+    <script>
+        document.getElementById("rock-paper-scissors-output").innerHTML = game();
+    </script>
     
 </body>
 </html>

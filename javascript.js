@@ -4,7 +4,6 @@ function getComputerChoice() {
     return choice;
 }
 
-// console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection1) {
     let computerSelection = computerSelection1.toLowerCase();
@@ -21,22 +20,40 @@ function playRound(playerSelection, computerSelection1) {
         result = `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 
-    // console.log(result);
     return result;
 }
 
-// const playerSelection = "rock";
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection, computerSelection));
 
 function game() {
-    for (let i = 0; i < 2; i++) {
+    let scoreHuman = 0;
+    let scoreCPU = 0;
+
+    for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Please enter your selection: ").toLowerCase();
+        // const playerSelection = "rock";
         const computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
+
+        if (result.includes("Win")==true) {
+            scoreHuman++;
+        } else if (result.includes("Lose")==true) {
+            scoreCPU++;
+        }
     }
 
+    console.log(scoreHuman);
+    console.log(scoreCPU);
+
+    if (scoreHuman==scoreCPU) {
+        message = "It's a tie!";
+    } else if (scoreHuman > scoreCPU) {
+        message = "You win!";
+    } else {
+        message = "Computer wins!";
+    }
+
+    return message;
 }
 
-console.log(game());
+
