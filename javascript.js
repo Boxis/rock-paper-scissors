@@ -5,8 +5,21 @@ function getComputerChoice() {
 }
 
 
-function playRound(playerSelection, computerSelection1) {
-    let computerSelection = computerSelection1.toLowerCase();
+const rock = document.getElementById("rock");
+
+// rock.addEventListener("click", playRound(playerSelection="rock"));
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.id);
+    })
+})
+
+
+function playRound(playerSelection) {
+    const computerSelection = getComputerChoice().toLowerCase();
     console.log(playerSelection);
     console.log(computerSelection);
 
@@ -19,6 +32,8 @@ function playRound(playerSelection, computerSelection1) {
     } else {
         result = `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
+    
+    console.log(result);
 
     return result;
 }

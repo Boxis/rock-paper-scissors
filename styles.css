@@ -1,0 +1,8 @@
+div {
+    border: 1em red;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
